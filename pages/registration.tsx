@@ -1,9 +1,9 @@
 import Head from 'next/head'
 import React from 'react'
 
-import LandPage from '../src/ui/components/land_page'
+import AppRegistration from '../src/ui/components/registration'
 
-export default function App() {
+export default function Registration() {
 	return (
 		<>
 			<Head>
@@ -13,8 +13,8 @@ export default function App() {
 					name='viewport'
 					content='width=device-width, initial-scale=1'
 				/>
-				<meta name='og:title' content='Adopet - Inicio' />
-				<title>Adopet - Inicio</title>
+				<meta name='og:title' content='Adopet - Cadastro' />
+				<title>Adopet - Cadastro</title>
 				<meta
 					name='description'
 					content='Contribua com esta causa...'
@@ -26,7 +26,7 @@ export default function App() {
 					property='og:url'
 					content='https://adopet-by-asoncs.web.app/'
 				/>
-				<meta property='og:title' content='Adopet - Inicio' />
+				<meta property='og:title' content='Adopet - Cadastro' />
 				<meta
 					property='og:description'
 					content='Contribua com esta causa...'
@@ -42,7 +42,7 @@ export default function App() {
 					property='twitter:url'
 					content='https://adopet-by-asoncs.web.app/'
 				/>
-				<meta property='twitter:title' content='Adopet - Inicio' />
+				<meta property='twitter:title' content='Adopet - Cadastro' />
 				<meta
 					property='twitter:description'
 					content='Contribua com esta causa...'
@@ -52,7 +52,7 @@ export default function App() {
 					content='https://adopet-by-asoncs.web.app/images/logo_02.png'
 				/>
 			</Head>
-			<LandPage />
+			<AppRegistration />
 		</>
 	)
 }

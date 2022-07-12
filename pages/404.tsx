@@ -5,7 +5,7 @@ export default function _404() {
 	return (
 		<>
 			<Head>
-				<link rel='icon' href='/favicon.ico' />
+				<link rel='icon' href='/images/logo_01.png' />
 				<meta name='og:title' content={'404 Error'} />
 				<title>{'404 Error'}</title>
 			</Head>
