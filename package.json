@@ -6,13 +6,11 @@
 		"dev": "next dev -H 0.0.0.0",
 		"build": "next build",
 		"start": "next start",
-		"export": "next build && next export -o ../public",
-		"serve": "next build && next export -o ../public && firebase serve -o 0.0.0.0 --only functions,hosting"
+		"export": "next build && next export -o ./docs"
 	},
 	"dependencies": {
 		"base64url": "^3.0.1",
 		"date-fns": "^2.16.1",
-		"firebase": "^9.6.10",
 		"gray-matter": "^4.0.2",
 		"next": "^12.0.9",
 		"next-build-id": "^3.0.0",

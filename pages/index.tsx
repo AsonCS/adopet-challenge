@@ -24,7 +24,7 @@ export default function App() {
 				<meta property='og:type' content='website' />
 				<meta
 					property='og:url'
-					content='https://github.com/AsonCS/react-projeto-tchauzinho'
+					content='https://github.com/AsonCS/adopet-challenge'
 				/>
 				<meta property='og:title' content='Adopet' />
 				<meta
@@ -33,14 +33,14 @@ export default function App() {
 				/>
 				<meta
 					property='og:image'
-					content='https://github.com/AsonCS/react-projeto-tchauzinho/raw/master/public/favicon.ico'
+					content='https://github.com/AsonCS/adopet-challenge/raw/main/public/images/logo_02.png'
 				/>
 
 				{/* <!-- Twitter --> */}
 				<meta property='twitter:card' content='summary_large_image' />
 				<meta
 					property='twitter:url'
-					content='https://github.com/AsonCS/react-projeto-tchauzinho'
+					content='https://github.com/AsonCS/adopet-challenge'
 				/>
 				<meta property='twitter:title' content='Adopet' />
 				<meta
@@ -49,7 +49,7 @@ export default function App() {
 				/>
 				<meta
 					property='twitter:image'
-					content='https://github.com/AsonCS/react-projeto-tchauzinho/raw/master/public/favicon.ico'
+					content='https://github.com/AsonCS/adopet-challenge/raw/main/public/images/logo_02.png'
 				/>
 			</Head>
 			<Home />
