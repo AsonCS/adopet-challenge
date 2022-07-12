@@ -10,7 +10,7 @@ const H2 = styled.h2`
 	font-size: 1em;
 	font-style: normal;
 	font-weight: 400;
-	margin: 1.5em auto;
+	margin: 2.5em auto;
 	width: 80vw;
 
 	span {
@@ -20,11 +20,21 @@ const H2 = styled.h2`
 `
 
 const Form = styled.form`
-	margin-bottom: 100px;
+	margin-bottom: 300px;
+`
+
+const ForgotLabel = styled.label`
+	color: #fc7071;
+	display: block;
+	font-size: 0.8em;
+	font-weight: 400;
+	margin-bottom: 1.2em;
+	text-decoration: underline;
 `
 
 export default {
 	Container,
 	H2,
 	Form,
+	ForgotLabel,
 }
