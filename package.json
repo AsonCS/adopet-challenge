@@ -1,13 +1,41 @@
 {
-  "private": true,
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start"
-  },
-  "dependencies": {
-    "next": "latest",
-    "react": "17.0.2",
-    "react-dom": "17.0.2"
-  }
+	"name": "my-app",
+	"version": "0.1.0",
+	"private": true,
+	"scripts": {
+		"dev": "next dev -H 0.0.0.0",
+		"build": "next build",
+		"start": "next start",
+		"export": "next build && next export -o ../public",
+		"serve": "next build && next export -o ../public && firebase serve -o 0.0.0.0 --only functions,hosting"
+	},
+	"dependencies": {
+		"base64url": "^3.0.1",
+		"date-fns": "^2.16.1",
+		"firebase": "^9.6.10",
+		"gray-matter": "^4.0.2",
+		"next": "^12.0.9",
+		"next-build-id": "^3.0.0",
+		"react": "17.0.2",
+		"react-dom": "17.0.2",
+		"remark": "^14.0.2",
+		"remark-html": "^15.0.1"
+	},
+	"devDependencies": {
+		"@types/react": "^17.0.38",
+		"@types/styled-components": "^5.1.21",
+		"@typescript-eslint/eslint-plugin": "^3.10.1",
+		"@typescript-eslint/parser": "^3.10.1",
+		"babel-plugin-styled-components": "^2.0.2",
+		"eslint": "^7.10.0",
+		"eslint-config-standard": "^14.1.1",
+		"eslint-plugin-import": "^2.22.1",
+		"eslint-plugin-node": "^11.1.0",
+		"eslint-plugin-promise": "^4.2.1",
+		"eslint-plugin-react": "^7.21.3",
+		"eslint-plugin-standard": "^4.0.1",
+		"sass": "^1.52.3",
+		"styled-components": "^5.3.3",
+		"typescript": "^4.3.2"
+	}
 }
