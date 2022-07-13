@@ -9,24 +9,8 @@ import Styled from './styled'
 import Form from './form'
 
 export default function Registration() {
-	const Containers = (props: { children: any }) => {
-		return (
-			<AppStyled.AppContainer>
-				<AppStyled.Forma01>
-					<AppStyled.Forma03>
-						<AppStyled.Forma04>
-							<AppStyled.AppContent>
-								{props.children}
-							</AppStyled.AppContent>
-						</AppStyled.Forma04>
-					</AppStyled.Forma03>
-				</AppStyled.Forma01>
-			</AppStyled.AppContainer>
-		)
-	}
-
 	return (
-		<Containers>
+		<AppStyled.AppContainer040103>
 			<AppHeader userAvatar={null} />
 			<AppStyled.AppMain>
 				<AppStyled.Logo src={logo02} alt='Adopet logo' />
@@ -43,6 +27,6 @@ export default function Registration() {
 				</Form>
 			</AppStyled.AppMain>
 			<AppFooter />
-		</Containers>
+		</AppStyled.AppContainer040103>
 	)
 }

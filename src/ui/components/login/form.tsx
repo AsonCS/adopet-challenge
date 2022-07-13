@@ -18,12 +18,12 @@ export default function Form(props: { children: any }) {
 			</AppStyled.AppFormLabel>
 			<AppStyled.AppFormLabel>
 				Senha
-				<AppStyled.AppFormInput
+				<AppStyled.AppFormInputPassword
 					type={passwordVisible ? 'text' : 'password'}
 					name='password'
 					placeholder='Insira sua senha'
 				/>
-				<img
+				<AppStyled.AppFormPasswordToggle
 					src={passwordToggle}
 					onClick={() => setPasswordVisible((old) => !old)}
 				/>

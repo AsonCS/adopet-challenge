@@ -11,7 +11,7 @@ const Form = styled.form`
 `
 
 const ForgotLabel = styled.label`
-	color: #fc7071;
+	color: var(--coral);
 	display: block;
 	font-size: 0.8em;
 	font-weight: 400;

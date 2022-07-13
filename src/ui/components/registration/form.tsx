@@ -27,24 +27,24 @@ export default function Form(props: { children: any }) {
 			</AppStyled.AppFormLabel>
 			<AppStyled.AppFormLabel>
 				Senha
-				<AppStyled.AppFormInput
+				<AppStyled.AppFormInputPassword
 					type={passwordVisible ? 'text' : 'password'}
 					name='password'
 					placeholder='Crie uma senha'
 				/>
-				<img
+				<AppStyled.AppFormPasswordToggle
 					src={passwordToggle}
 					onClick={() => setPasswordVisible((old) => !old)}
 				/>
 			</AppStyled.AppFormLabel>
 			<AppStyled.AppFormLabel>
 				Confirma sua senha
-				<AppStyled.AppFormInput
+				<AppStyled.AppFormInputPassword
 					type={confirmPasswordVisible ? 'text' : 'password'}
 					name='confirmPassword'
 					placeholder='Repita a senha criada acima'
 				/>
-				<img
+				<AppStyled.AppFormPasswordToggle
 					src={passwordToggle}
 					onClick={() => setConfirmPasswordVisible((old) => !old)}
 				/>

@@ -8,7 +8,7 @@ export default function PetsList(props: {
 	onPetClick: (id: number, name: string) => void
 }) {
 	return (
-		<>
+		<Styled.ContainerList>
 			{props.petList.map((pet) => {
 				return (
 					<Styled.Figure key={pet.id}>
@@ -40,6 +40,6 @@ export default function PetsList(props: {
 					</Styled.Figure>
 				)
 			})}
-		</>
+		</Styled.ContainerList>
 	)
 }
