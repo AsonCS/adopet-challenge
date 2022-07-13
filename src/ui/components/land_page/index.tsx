@@ -28,10 +28,10 @@ export default function LandPage() {
 			<AppStyled.AppMain>
 				<AppStyled.Logo src={logo03} alt='Adopet logo' />
 				<Styled.H1>Boas-vindas!</Styled.H1>
-				<Styled.H2>
+				<AppStyled.AppH2>
 					Que tal mudar sua vida adotando seu novo melhor amigo? Vem
 					com a gente!
-				</Styled.H2>
+				</AppStyled.AppH2>
 				<AppStyled.AppAnchor href={login}>
 					Já tenho conta
 				</AppStyled.AppAnchor>

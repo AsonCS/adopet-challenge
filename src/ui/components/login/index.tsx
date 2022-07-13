@@ -1,5 +1,6 @@
 import React from 'react'
 
+import { home } from '../../paths'
 import { logo02 } from '../../images'
 import AppStyled from '../../styled'
 import AppHeader from '../header'
@@ -10,7 +11,7 @@ import Form from './form'
 export default function Registration() {
 	const Containers = (props: { children: any }) => {
 		return (
-			<Styled.Container>
+			<AppStyled.AppContainer>
 				<AppStyled.Forma01>
 					<AppStyled.Forma03>
 						<AppStyled.Forma04>
@@ -20,7 +21,7 @@ export default function Registration() {
 						</AppStyled.Forma04>
 					</AppStyled.Forma03>
 				</AppStyled.Forma01>
-			</Styled.Container>
+			</AppStyled.AppContainer>
 		)
 	}
 
@@ -34,7 +35,9 @@ export default function Registration() {
 					<Styled.ForgotLabel>
 						Esqueci minha senha.
 					</Styled.ForgotLabel>
-					<AppStyled.AppButton>Entrar</AppStyled.AppButton>
+					<AppStyled.AppButton>
+						<a href={home}>Entrar</a>
+					</AppStyled.AppButton>
 				</Form>
 			</AppStyled.AppMain>
 			<AppFooter />

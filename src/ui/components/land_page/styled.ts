@@ -1,10 +1,10 @@
 import styled from 'styled-components'
 
-const Container = styled.div`
+import AppStyled from '../../styled'
+
+const Container = styled(AppStyled.AppContainer)`
 	background: #3772ff;
 	color: #ffffff;
-	min-height: 100vh;
-	text-align: center;
 `
 
 const H1 = styled.h1`
@@ -13,14 +13,6 @@ const H1 = styled.h1`
 	font-style: normal;
 	font-weight: 500;
 	margin-top: 1em;
-`
-
-const H2 = styled.h2`
-	font-size: 1em;
-	font-style: normal;
-	font-weight: 400;
-	margin: 1.5em auto;
-	width: 60vw;
 `
 
 const DivDraw = styled.div`
@@ -33,6 +25,5 @@ const DivDraw = styled.div`
 export default {
 	Container,
 	H1,
-	H2,
 	DivDraw,
 }

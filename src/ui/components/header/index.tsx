@@ -1,27 +1,10 @@
-import styled from 'styled-components'
 import React from 'react'
 
 import { casa, messages, userPlaceholder } from '../../images'
+import { landPage, registration } from '../../paths'
+import Styled from './styled'
 
-const Header = styled.header`
-	display: flex;
-	gap: 4em;
-	justify-content: space-between;
-	padding: 3em 2em 0em 3em;
-`
-
-const Nav = styled.nav`
-	display: flex;
-	gap: 4em;
-`
-
-const NavIcon = styled.img`
-	width: 24px;
-`
-
-export default function AppHeader(props: {
-	userAvatar: string | null
-}) {
+export default function AppHeader(props: { userAvatar: string | null }) {
 	const userIcon = () => {
 		if (props.userAvatar === null) {
 			return <></>
@@ -30,12 +13,16 @@ export default function AppHeader(props: {
 		}
 	}
 	return (
-		<Header>
-			<Nav>
-				<NavIcon src={casa} alt='Icone de home' />
-				<NavIcon src={messages} alt='Icone de mensagens' />
-			</Nav>
+		<Styled.Header>
+			<Styled.Nav>
+				<a href={landPage}>
+					<Styled.NavIcon src={casa} alt='Icone de home' />
+				</a>
+				<a href={registration}>
+					<Styled.NavIcon src={messages} alt='Icone de mensagens' />
+				</a>
+			</Styled.Nav>
 			{userIcon()}
-		</Header>
+		</Styled.Header>
 	)
 }

@@ -24,7 +24,7 @@ export default function Login() {
 				<meta property='og:type' content='website' />
 				<meta
 					property='og:url'
-					content='https://adopet-by-asoncs.web.app/'
+					content='https://adopet-by-asoncs.web.app/login'
 				/>
 				<meta property='og:title' content='Adopet - Login' />
 				<meta
@@ -40,7 +40,7 @@ export default function Login() {
 				<meta property='twitter:card' content='summary_large_image' />
 				<meta
 					property='twitter:url'
-					content='https://adopet-by-asoncs.web.app/'
+					content='https://adopet-by-asoncs.web.app/login'
 				/>
 				<meta property='twitter:title' content='Adopet - Login' />
 				<meta

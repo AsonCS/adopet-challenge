@@ -10,11 +10,29 @@ const AppContent = styled.div`
 	width: 100vw;
 `
 
+const AppContainer = styled.div`
+	min-height: 100vh;
+	text-align: center;
+`
+
 const AppMain = styled.main`
 	display: flex;
 	flex-direction: column;
 	flex-grow: 1;
-	margin-top: 8em;
+	margin-top: 6em;
+`
+
+const AppH2 = styled.h2`
+	font-size: 1em;
+	font-style: normal;
+	font-weight: 400;
+	margin: 1.5em auto;
+	width: 60vw;
+`
+
+const AppH2Blue = styled(AppH2)`
+	color: #3772ff;
+	width: 80vw;
 `
 
 const Forma01 = styled.div`
@@ -75,6 +93,11 @@ const AppButton = styled.button`
 	margin: 1em auto 0;
 	min-width: 50vw;
 	padding: 1em;
+
+	a {
+		color: #ffffff;
+		text-decoration: none;
+	}
 `
 
 const AppFormLabel = styled.label`
@@ -114,7 +137,10 @@ const AppFormInput = styled.input`
 
 export default {
 	AppContent,
+	AppContainer,
 	AppMain,
+	AppH2,
+	AppH2Blue,
 	Forma01,
 	Forma02,
 	Forma03,
