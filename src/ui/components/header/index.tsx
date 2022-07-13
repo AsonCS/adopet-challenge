@@ -1,25 +1,36 @@
 import React from 'react'
 
-import { casa, messages, userPlaceholder } from '../../images'
-import { landPage, registration } from '../../paths'
+import { casa, logo03, messages as imgMessages } from '../../images'
+import { landPage, messages, profile } from '../../paths'
 import Styled from './styled'
 
-export default function AppHeader(props: { userAvatar: string | null }) {
+export default function AppHeader(props: { userAvatar: string }) {
 	const userIcon = () => {
-		if (props.userAvatar === null) {
+		if (!props.userAvatar) {
 			return <></>
 		} else {
-			return <img src={userPlaceholder} alt='Icone do usuário' />
+			return (
+				<a href={profile}>
+					<Styled.UserImg
+						src={props.userAvatar}
+						alt='Icone do usuário'
+					/>
+				</a>
+			)
 		}
 	}
 	return (
 		<Styled.Header>
+			<Styled.Logo src={logo03} alt='Logo' />
 			<Styled.Nav>
 				<a href={landPage}>
 					<Styled.NavIcon src={casa} alt='Icone de home' />
 				</a>
-				<a href={registration}>
-					<Styled.NavIcon src={messages} alt='Icone de mensagens' />
+				<a href={messages}>
+					<Styled.NavIcon
+						src={imgMessages}
+						alt='Icone de mensagens'
+					/>
 				</a>
 			</Styled.Nav>
 			{userIcon()}

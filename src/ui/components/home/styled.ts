@@ -1,19 +1,62 @@
 import styled from 'styled-components'
 
-import { icMessage } from '../../images'
+import { forma01, forma02, icMessage } from '../../images'
 import AppStyled from '../../styled'
 
-const H2 = styled(AppStyled.AppH2Blue)`
-	margin: 0 auto;
-	margin-bottom: 1em;
+const Container = styled(AppStyled.AppContainer01)`
+	@media (min-width: 768px) {
+		background-image: url(${forma01});
+		background-position: left top;
+		background-size: 70vw;
+	}
+
+	@media (min-width: 1440px) {
+		background-image: url(${forma01}), url(${forma02});
+		background-position: left top, right center;
+		background-size: 40vw, 7vw;
+	}
+`
+
+const H2Span = styled.span`
+	display: inline;
+
+	@media (min-width: 768px) {
+		display: block;
+	}
+
+	@media (min-width: 1440px) {
+		display: inline;
+	}
+`
+
+const ContainerList = styled.div`
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+
+	@media (min-width: 768px) {
+		padding: 0 5vw 3vh;
+	}
+
+	@media (min-width: 1440px) {
+		padding: 0 10vw 7vh;
+	}
 `
 
 const Figure = styled.figure`
-	background-color: #33333311;
+	background-color: var(--alpha-gray);
 	display: block;
 	display: flex;
 	margin-top: 1em;
 	width: 100vw;
+
+	@media (min-width: 768px) {
+		width: 44vw;
+	}
+
+	@media (min-width: 1440px) {
+		width: 25vw;
+	}
 `
 
 const Img = styled.img`
@@ -21,7 +64,7 @@ const Img = styled.img`
 `
 
 const Figcaption = styled.figcaption`
-	color: #737380;
+	color: var(--dark-gray);
 	display: flex;
 	flex-direction: column;
 	font-size: 0.9em;
@@ -35,7 +78,7 @@ const LabelInfos = styled.label`
 `
 
 const Span = styled.span`
-	color: #3772ff;
+	color: var(--blue);
 	display: block;
 	font-weight: 600;
 	margin-bottom: 0.5em;
@@ -55,6 +98,7 @@ const SpanLocation = styled.span`
 const SpanContact = styled.span`
 	background-image: url(${icMessage});
 	background-repeat: no-repeat;
+	cursor: pointer;
 	font-size: 0.7em;
 	font-weight: 400;
 	margin-bottom: 2em;
@@ -64,7 +108,9 @@ const SpanContact = styled.span`
 `
 
 export default {
-	H2,
+	Container,
+	H2Span,
+	ContainerList,
 	Figure,
 	Img,
 	Figcaption,

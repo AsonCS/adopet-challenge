@@ -1,5 +1,6 @@
 import React from 'react'
 
+import { userPlaceholder } from '../../images'
 import AppStyled from '../../styled'
 import AppFooter from '../footer'
 import AppHeader from '../header'
@@ -8,31 +9,20 @@ import { petList } from './Pets'
 import Styled from './styled'
 
 export default function Home() {
-	const Containers = (props: { children: any }) => {
-		return (
-			<AppStyled.AppContainer>
-				<AppStyled.Forma01>
-					<AppStyled.AppContent>
-						{props.children}
-					</AppStyled.AppContent>
-				</AppStyled.Forma01>
-			</AppStyled.AppContainer>
-		)
-	}
-
 	return (
-		<Containers>
-			<AppHeader userAvatar={''} />
+		<Styled.Container>
+			<AppHeader userAvatar={userPlaceholder} />
 			<AppStyled.AppMain>
-				<Styled.H2>
-					Olá! Veja os amigos disponíveis para adoção!
-				</Styled.H2>
+				<AppStyled.AppH2BlueMargin>
+					<Styled.H2Span>Olá!</Styled.H2Span> Veja os amigos
+					disponíveis para adoção!
+				</AppStyled.AppH2BlueMargin>
 				<PetsList
 					petList={petList}
 					onPetClick={(id, name) => alert(`Pet ${name} com id ${id}`)}
 				/>
 			</AppStyled.AppMain>
 			<AppFooter />
-		</Containers>
+		</Styled.Container>
 	)
 }
