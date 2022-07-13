@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { landPage } from '../../paths'
+import { home } from '../../paths'
 import { logo02 } from '../../images'
 import AppStyled from '../../styled'
 import AppHeader from '../header'
@@ -30,15 +30,13 @@ export default function Registration() {
 			<AppHeader userAvatar={null} />
 			<AppStyled.AppMain>
 				<AppStyled.Logo src={logo02} alt='Adopet logo' />
-				<Styled.H2>
-					Ainda não tem cadastro?
-					<span />
-					Então, antes de buscar seu melhor amigo, precisamos de
-					alguns dados:
-				</Styled.H2>
+				<Styled.H2>Já tem conta? Faça seu login:</Styled.H2>
 				<Form>
+					<Styled.ForgotLabel>
+						Esqueci minha senha.
+					</Styled.ForgotLabel>
 					<AppStyled.AppButton>
-						<a href={landPage}>Cadastrar</a>
+						<a href={home}>Entrar</a>
 					</AppStyled.AppButton>
 				</Form>
 			</AppStyled.AppMain>

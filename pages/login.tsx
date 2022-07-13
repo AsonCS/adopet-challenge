@@ -1,9 +1,9 @@
 import Head from 'next/head'
 import React from 'react'
 
-import AppRegistration from '../src/ui/components/registration'
+import AppLogin from '../src/ui/components/login'
 
-export default function Registration() {
+export default function Login() {
 	return (
 		<>
 			<Head>
@@ -13,8 +13,8 @@ export default function Registration() {
 					name='viewport'
 					content='width=device-width, initial-scale=1'
 				/>
-				<meta name='og:title' content='Adopet - Cadastro' />
-				<title>Adopet - Cadastro</title>
+				<meta name='og:title' content='Adopet - Login' />
+				<title>Adopet - Login</title>
 				<meta
 					name='description'
 					content='Contribua com esta causa...'
@@ -24,9 +24,9 @@ export default function Registration() {
 				<meta property='og:type' content='website' />
 				<meta
 					property='og:url'
-					content='https://adopet-by-asoncs.web.app/registration'
+					content='https://adopet-by-asoncs.web.app/login'
 				/>
-				<meta property='og:title' content='Adopet - Cadastro' />
+				<meta property='og:title' content='Adopet - Login' />
 				<meta
 					property='og:description'
 					content='Contribua com esta causa...'
@@ -40,9 +40,9 @@ export default function Registration() {
 				<meta property='twitter:card' content='summary_large_image' />
 				<meta
 					property='twitter:url'
-					content='https://adopet-by-asoncs.web.app/registration'
+					content='https://adopet-by-asoncs.web.app/login'
 				/>
-				<meta property='twitter:title' content='Adopet - Cadastro' />
+				<meta property='twitter:title' content='Adopet - Login' />
 				<meta
 					property='twitter:description'
 					content='Contribua com esta causa...'
@@ -52,7 +52,7 @@ export default function Registration() {
 					content='https://adopet-by-asoncs.web.app/images/logo_02.png'
 				/>
 			</Head>
-			<AppRegistration />
+			<AppLogin />
 		</>
 	)
 }
