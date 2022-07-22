@@ -1,5 +1,8 @@
+import Router from 'next/router'
 import React from 'react'
 
+import { setUser } from '../../../api/repository/local'
+import User from '../../../api/model/User'
 import { landPage } from '../../paths'
 import { logo02 } from '../../images'
 import AppStyled from '../../styled'
@@ -20,9 +23,13 @@ export default function Registration() {
 					Então, antes de buscar seu melhor amigo, precisamos de
 					alguns dados:
 				</Styled.H2>
-				<Form>
-					<AppStyled.AppButton>
-						<a href={landPage}>Cadastrar</a>
+				<Form
+					onSubmit={(user: User) => {
+						setUser(user).then(() => Router.replace(landPage))
+					}}
+				>
+					<AppStyled.AppButton type='submit'>
+						Cadastrar
 					</AppStyled.AppButton>
 				</Form>
 			</AppStyled.AppMain>

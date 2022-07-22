@@ -241,6 +241,8 @@ const AppForm = styled.form`
 const AppFormLabel = styled.label`
 	color: var(--dark-gray);
 	display: block;
+	margin: auto;
+	width: fit-content;
 `
 
 const AppFormLabelBlue = styled(AppFormLabel)`
@@ -250,7 +252,7 @@ const AppFormLabelBlue = styled(AppFormLabel)`
 
 const AppFormPasswordToggle = styled.img`
 	float: right;
-	margin-right: 1.5em;
+	margin-right: 1em;
 	margin-top: -3em;
 	padding: 0.5em;
 	position: relative;

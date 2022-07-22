@@ -1,6 +1,8 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import Router from 'next/router'
 
-import { login, registration } from '../../paths'
+import { getSessionUser } from '../../../api/repository/local'
+import { home, login, registration } from '../../paths'
 import { logo03, draw01 } from '../../images'
 import AppStyled from '../../styled'
 import AppHeader from '../header'
@@ -8,6 +10,14 @@ import AppFooter from '../footer'
 import Styled from './styled'
 
 export default function LandPage() {
+	useEffect(() => {
+		getSessionUser().then((user) => {
+			if (user) {
+				Router.replace(home)
+			}
+		})
+	}, [])
+
 	return (
 		<Styled.Container>
 			<AppStyled.AppContainer0102>
