@@ -28,7 +28,7 @@ export default function Registration() {
 				</Styled.H2>
 				<Form
 					onSubmit={(user: User) => {
-						setUser(user)
+						setUser(user, true)
 							.then((isSuccessful) => {
 								if (isSuccessful) {
 									return setSessionUser(user)

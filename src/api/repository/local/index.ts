@@ -7,7 +7,10 @@ import User from '../../model/User'
 const SESSION_USER = 'SESSION_USER'
 const IMG_USER = 'IMG_USER'
 
-export const setUser = async (user: User): Promise<boolean> => {
+export const setUser = async (
+	user: User,
+	savePassword: boolean = false
+): Promise<boolean> => {
 	try {
 		const store = new User(
 			user.about,
@@ -20,7 +23,9 @@ export const setUser = async (user: User): Promise<boolean> => {
 		)
 		const avatar = store.avatar
 		store.avatar = ''
-		store.password = sha256(store.password)
+		if (savePassword) {
+			store.password = sha256(store.password)
+		}
 		localStorage.setItem(store.email, JSON.stringify(store))
 		localStorage.setItem(`${store.email}_${IMG_USER}`, avatar)
 		return Promise.resolve(true)
@@ -43,9 +48,7 @@ export const getUser = async (
 		if (user.password !== sha256(password)) {
 			throw new WrongPasswordException()
 		}
-		user.password = ''
 		user.avatar = localStorage.getItem(`${user.email}_${IMG_USER}`)
-		console.log(user)
 		return Promise.resolve(user)
 	} catch (error) {
 		// console.log(error)
@@ -67,7 +70,6 @@ export const setSessionUser = async (user: User | null): Promise<boolean> => {
 			)
 			const avatar = store.avatar
 			store.avatar = ''
-			store.password = ''
 			sessionStorage.setItem(SESSION_USER, JSON.stringify(store))
 			sessionStorage.setItem(IMG_USER, avatar)
 		} else {
