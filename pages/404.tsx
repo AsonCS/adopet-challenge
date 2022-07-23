@@ -1,7 +1,13 @@
+import React, { useEffect } from 'react'
+import Router from 'next/router'
 import Head from 'next/head'
-import React from 'react'
+
+import { landPage } from '../src/ui/paths'
 
 export default function _404() {
+	useEffect(() => {
+		Router.replace(landPage)
+	})
 	return (
 		<>
 			<Head>

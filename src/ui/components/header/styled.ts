@@ -37,14 +37,17 @@ const NavIcon = styled.img`
 `
 
 const UserImg = styled.img`
-	height: 2.5em;
+	border-radius: 2.5em;
+	width: 2.5em;
 
 	@media (min-width: 768px) {
-		height: 3em;
+		border-radius: 3em;
+		width: 3em;
 	}
 
 	@media (min-width: 1440px) {
-		height: 4em;
+		border-radius: 4em;
+		width: 4em;
 	}
 `
 

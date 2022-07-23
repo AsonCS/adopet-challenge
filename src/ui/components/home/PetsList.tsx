@@ -1,15 +1,15 @@
 import React from 'react'
 
 import Styled from './styled'
-import { Pet } from './Pets'
+import Pets from '../../../api/model/Pets'
 
 export default function PetsList(props: {
-	petList: Array<Pet>
+	pets: Pets
 	onPetClick: (id: number, name: string) => void
 }) {
 	return (
 		<Styled.ContainerList>
-			{props.petList.map((pet) => {
+			{props.pets.list.map((pet) => {
 				return (
 					<Styled.Figure key={pet.id}>
 						<Styled.Img src={pet.image} alt={pet.name} />

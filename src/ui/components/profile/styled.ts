@@ -8,7 +8,9 @@ const H2 = styled.h2`
 `
 
 const UserImg = styled.img`
+	border-radius: 5em;
 	display: block;
+	height: 5em;
 	margin: 0.5em auto;
 	width: 5em;
 `
@@ -20,6 +22,10 @@ const UserSpan = styled.span`
 	font-weight: 400;
 	margin-bottom: 0.5em;
 	margin-top: 0.5em;
+
+	input[type='file'] {
+		display: none;
+	}
 `
 
 export default {
