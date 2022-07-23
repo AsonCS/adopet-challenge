@@ -2,7 +2,7 @@ import Pets from '../../model/Pets'
 
 export const getPets = async (): Promise<Pets> => {
 	const response: Pets = await fetch(
-		'https://raw.githubusercontent.com/AsonCS/adopet-challenge/dev/public/json/pets.json'
+		'https://adopet-by-asoncs.web.app/json/pets.json'
 	)
 		.then((value) => value.json())
 		.then((value) => new Pets(value))

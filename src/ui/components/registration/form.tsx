@@ -1,7 +1,7 @@
 import React, { useRef, useState } from 'react'
 
-import { EMAIL_ADDRESS } from '../../../utils'
-import { passwordToggle } from '../../images'
+import { passwordToggle, userPlaceholder } from '../../images'
+import { EMAIL_ADDRESS_REGEX } from '../../../utils'
 import User from '../../../api/model/User'
 import AppStyled from '../../styled'
 import Styled from './styled'
@@ -40,11 +40,17 @@ export default function Form(props: Props) {
 			action='#'
 			onSubmit={(e) => {
 				e.preventDefault()
+
 				const user = new User(
+					'',
+					'',
+					userPlaceholder,
 					emailRef.current.value,
 					nameRef.current.value,
-					passwordRef.current.value
+					passwordRef.current.value,
+					''
 				)
+
 				// console.log(user)
 				if (verifyPassword()) {
 					props.onSubmit(user)
@@ -57,7 +63,7 @@ export default function Form(props: Props) {
 					ref={emailRef}
 					type={'email'}
 					name='email'
-					pattern={EMAIL_ADDRESS}
+					pattern={EMAIL_ADDRESS_REGEX}
 					placeholder='Escolha seu melhor email'
 					required
 				/>
@@ -76,45 +82,49 @@ export default function Form(props: Props) {
 			</AppStyled.AppFormLabel>
 			<AppStyled.AppFormLabel>
 				Senha
-				<AppStyled.AppFormInputPassword
-					ref={passwordRef}
-					onChange={() => {
-						if (hasError) {
-							verifyPassword()
-						}
-					}}
-					type={passwordVisible ? 'text' : 'password'}
-					name='password'
-					minLength={8}
-					maxLength={20}
-					placeholder='Crie uma senha'
-					required
-				/>
-				<AppStyled.AppFormPasswordToggle
-					src={passwordToggle}
-					onClick={() => setPasswordVisible((old) => !old)}
-				/>
+				<AppStyled.AppDivFormInputPassword>
+					<AppStyled.AppFormInputPassword
+						ref={passwordRef}
+						onChange={() => {
+							if (hasError) {
+								verifyPassword()
+							}
+						}}
+						type={passwordVisible ? 'text' : 'password'}
+						name='password'
+						minLength={8}
+						maxLength={20}
+						placeholder='Crie uma senha'
+						required
+					/>
+					<AppStyled.AppFormPasswordToggle
+						src={passwordToggle}
+						onClick={() => setPasswordVisible((old) => !old)}
+					/>
+				</AppStyled.AppDivFormInputPassword>
 			</AppStyled.AppFormLabel>
 			<AppStyled.AppFormLabel>
 				Confirma sua senha
-				<AppStyled.AppFormInputPassword
-					ref={confirmPasswordRef}
-					onChange={() => {
-						if (hasError) {
-							verifyPassword()
-						}
-					}}
-					type={confirmPasswordVisible ? 'text' : 'password'}
-					name='confirmPassword'
-					minLength={8}
-					maxLength={20}
-					placeholder='Repita a senha criada acima'
-					required
-				/>
-				<AppStyled.AppFormPasswordToggle
-					src={passwordToggle}
-					onClick={() => setConfirmPasswordVisible((old) => !old)}
-				/>
+				<AppStyled.AppDivFormInputPassword>
+					<AppStyled.AppFormInputPassword
+						ref={confirmPasswordRef}
+						onChange={() => {
+							if (hasError) {
+								verifyPassword()
+							}
+						}}
+						type={confirmPasswordVisible ? 'text' : 'password'}
+						name='confirmPassword'
+						minLength={8}
+						maxLength={20}
+						placeholder='Repita a senha criada acima'
+						required
+					/>
+					<AppStyled.AppFormPasswordToggle
+						src={passwordToggle}
+						onClick={() => setConfirmPasswordVisible((old) => !old)}
+					/>
+				</AppStyled.AppDivFormInputPassword>
 			</AppStyled.AppFormLabel>
 			{props.children}
 		</Styled.Form>

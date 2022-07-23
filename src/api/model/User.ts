@@ -1,7 +1,11 @@
 export default class User {
 	constructor(
-		public readonly email: string,
-		public readonly name: string,
-		public password: string = ''
+		public about: string,
+		public address: string,
+		public avatar: string,
+		public email: string,
+		public name: string,
+		public password: string,
+		public phone: string
 	) {}
 }

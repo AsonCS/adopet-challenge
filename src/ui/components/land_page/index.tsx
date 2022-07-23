@@ -1,7 +1,6 @@
-import React, { useEffect } from 'react'
-import Router from 'next/router'
+import React from 'react'
 
-import { getSessionUser } from '../../../api/repository/local'
+import useSessionUser from '../../hooks/useSessionUser'
 import { home, login, registration } from '../../paths'
 import { logo03, draw01 } from '../../images'
 import AppStyled from '../../styled'
@@ -10,18 +9,26 @@ import AppFooter from '../footer'
 import Styled from './styled'
 
 export default function LandPage() {
-	useEffect(() => {
-		getSessionUser().then((user) => {
-			if (user) {
-				Router.replace(home)
-			}
-		})
-	}, [])
+	const user = useSessionUser()
+
+	let buttons = <></>
+	if (user) {
+		buttons = <Styled.Anchor href={home}>Página de pets</Styled.Anchor>
+	} else if (user === null) {
+		buttons = (
+			<>
+				<Styled.Anchor href={login}>Já tenho conta</Styled.Anchor>
+				<Styled.Anchor href={registration}>
+					Quero me cadastrar
+				</Styled.Anchor>
+			</>
+		)
+	}
 
 	return (
 		<Styled.Container>
 			<AppStyled.AppContainer0102>
-				<AppHeader userAvatar={null} />
+				<AppHeader />
 				<AppStyled.AppMain>
 					<AppStyled.Logo src={logo03} alt='Adopet logo' />
 					<Styled.H1>Boas-vindas!</Styled.H1>
@@ -35,10 +42,7 @@ export default function LandPage() {
 							melhor amigo hoje? Vem com a gente!
 						</Styled.SpanLandscape>
 					</AppStyled.AppH2>
-					<Styled.Anchor href={login}>Já tenho conta</Styled.Anchor>
-					<Styled.Anchor href={registration}>
-						Quero me cadastrar
-					</Styled.Anchor>
+					{buttons}
 				</AppStyled.AppMain>
 				<Styled.DivDraw>
 					<Styled.Draw src={draw01} alt='Imagem cachorro e gato' />

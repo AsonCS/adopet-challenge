@@ -1,7 +1,8 @@
 import Router from 'next/router'
 import React from 'react'
 
-import { setUser } from '../../../api/repository/local'
+import { setUser, setSessionUser } from '../../../api/repository/local'
+import useRedirectUser from '../../hooks/useRedirectUser'
 import User from '../../../api/model/User'
 import { landPage } from '../../paths'
 import { logo02 } from '../../images'
@@ -12,9 +13,11 @@ import Styled from './styled'
 import Form from './form'
 
 export default function Registration() {
+	useRedirectUser(true, landPage)
+
 	return (
 		<AppStyled.AppContainer040103>
-			<AppHeader userAvatar={null} />
+			<AppHeader />
 			<AppStyled.AppMain>
 				<AppStyled.Logo src={logo02} alt='Adopet logo' />
 				<Styled.H2>
@@ -25,7 +28,18 @@ export default function Registration() {
 				</Styled.H2>
 				<Form
 					onSubmit={(user: User) => {
-						setUser(user).then(() => Router.replace(landPage))
+						setUser(user)
+							.then((isSuccessful) => {
+								if (isSuccessful) {
+									return setSessionUser(user)
+								}
+								return Promise.resolve(false)
+							})
+							.then((isSuccessful) => {
+								if (isSuccessful) {
+									Router.replace(landPage)
+								}
+							})
 					}}
 				>
 					<AppStyled.AppButton type='submit'>

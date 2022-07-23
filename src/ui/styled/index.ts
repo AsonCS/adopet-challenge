@@ -114,7 +114,7 @@ const AppContainer040103 = styled(AppContainer)`
 	@media (min-width: 1440px) {
 		background-image: url(${draw02}), url(${forma01}), url(${forma02});
 		background-position: right top, left top, right center;
-		background-size: 15vw, 35vw, 7vw;
+		background-size: 15vw, 40vw, 7vw;
 	}
 `
 
@@ -242,7 +242,7 @@ const AppFormLabel = styled.label`
 	color: var(--dark-gray);
 	display: block;
 	margin: auto;
-	width: fit-content;
+	width: 90%;
 `
 
 const AppFormLabelBlue = styled(AppFormLabel)`
@@ -288,15 +288,57 @@ const AppFormInput = styled.input`
 	}
 `
 
+const AppFormInputSelect = styled.select`
+	background-color: var(--light-2-gray);
+	border: none;
+	border-radius: 6px;
+	box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.15);
+	color: var(--dark-gray);
+	display: block;
+	font-family: var(--font-main);
+	height: 3em;
+	margin: 0.5em auto 1em;
+	text-align: center;
+	width: 90vw;
+
+	::placeholder {
+		color: var(--light-gray);
+	}
+
+	:focus {
+		outline-color: var(--dark-gray);
+	}
+
+	@media (min-width: 768px) {
+		width: 350px;
+	}
+
+	@media (min-width: 1440px) {
+		width: 550px;
+	}
+`
+
 const AppFormInputPassword = styled(AppFormInput)`
 	@media (min-width: 1440px) {
 		width: 350px;
 	}
 `
 
+const AppDivFormInputPassword = styled.div`
+	margin: auto;
+	width: fit-content;
+`
+
 const AppFormInputWhite = styled(AppFormInput)`
 	background-color: var(--white);
 	padding: 1em;
+	text-align: start;
+	width: 100%;
+`
+
+const AppFormInputSelectWhite = styled(AppFormInputSelect)`
+	background-color: var(--white);
+	padding: 0.7em;
 	text-align: start;
 	width: 100%;
 `
@@ -309,7 +351,7 @@ const AppFormTextArea = styled.textarea`
 	color: var(--dark-gray);
 	display: block;
 	font-family: var(--font-main);
-	height: 30vh;
+	height: 12em;
 	margin: 0.5em auto 1em;
 	padding: 1em;
 	text-align: start;
@@ -321,6 +363,10 @@ const AppFormTextArea = styled.textarea`
 
 	:focus {
 		outline-color: var(--dark-gray);
+	}
+
+	@media (min-width: 768px) {
+		height: 10em;
 	}
 `
 
@@ -342,7 +388,10 @@ export default {
 	AppFormLabelBlue,
 	AppFormPasswordToggle,
 	AppFormInput,
+	AppFormInputSelect,
 	AppFormInputPassword,
+	AppDivFormInputPassword,
 	AppFormInputWhite,
+	AppFormInputSelectWhite,
 	AppFormTextArea,
 }

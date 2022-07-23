@@ -1,8 +1,9 @@
-import React, { useEffect, useState } from 'react'
+import Router from 'next/router'
+import React from 'react'
 
-import { getPets } from '../../../api/repository/remote'
-import { userPlaceholder } from '../../images'
-import Pets from '../../../api/model/Pets'
+import useRedirectUser from '../../hooks/useRedirectUser'
+import usePets from '../../hooks/usePets'
+import { messages } from '../../paths'
 import AppStyled from '../../styled'
 import AppFooter from '../footer'
 import AppHeader from '../header'
@@ -10,15 +11,12 @@ import PetsList from './PetsList'
 import Styled from './styled'
 
 export default function Home() {
-	const [pets, setPets] = useState<Pets>(new Pets())
-
-	useEffect(() => {
-		getPets().then((pets) => setPets(pets))
-	}, [])
+	useRedirectUser()
+	const pets = usePets()
 
 	return (
 		<Styled.Container>
-			<AppHeader userAvatar={userPlaceholder} />
+			<AppHeader />
 			<AppStyled.AppMain>
 				<AppStyled.AppH2BlueMargin>
 					<Styled.H2Span>Olá!</Styled.H2Span> Veja os amigos
@@ -26,7 +24,9 @@ export default function Home() {
 				</AppStyled.AppH2BlueMargin>
 				<PetsList
 					pets={pets}
-					onPetClick={(id, name) => alert(`Pet ${name} com id ${id}`)}
+					onPetClick={(id, name) => {
+						Router.push(`${messages}?id=${id}&name=${name}`)
+					}}
 				/>
 			</AppStyled.AppMain>
 			<AppFooter />
