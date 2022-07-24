@@ -26,13 +26,13 @@
 
 ### Public Address
 
--   <a href="https://adopet-by-asoncs.web.app/">Adopet - Inicio</a>
+-   <a href="https://adopet-by-asoncs.web.app/" target="_blank">Adopet - Inicio</a>
 
 ### Trello Boards
 
--   <a href="https://trello.com/b/G1d1XRky/adopet-semana-1-mobile-first">Adopet - Semana 1 - Mobile-first</a>
--   <a href="https://trello.com/b/If9zskEu/adopet-semana-2-responsividade">Adopet - Semana 2 - Responsividade</a>
--   <a href="https://trello.com/b/hfpdPBXD/semana-3-e-4-javascript">Semana 3 e 4 - Javascript</a>
+-   <a href="https://trello.com/b/G1d1XRky/adopet-semana-1-mobile-first" target="_blank">Adopet - Semana 1 - Mobile-first</a>
+-   <a href="https://trello.com/b/If9zskEu/adopet-semana-2-responsividade" target="_blank">Adopet - Semana 2 - Responsividade</a>
+-   <a href="https://trello.com/b/hfpdPBXD/semana-3-e-4-javascript" target="_blank">Semana 3 e 4 - Javascript</a>
 
 # About
 
@@ -90,29 +90,29 @@ This is why I accepted this challenge, I want to improve my ability with layout 
 
 ### Functionalities
 
--   <a href="https://adopet-by-asoncs.web.app/">Root Page</a>
+-   <a href="https://adopet-by-asoncs.web.app/" target="_blank">Root Page</a>
     -   Signed user
         -   `Página de pets` button go to Home.
     -   Not signed user
         -   `Já tenho conta` button go to Login.
         -   `Quero me cadastrar` button go to Registration.
--   <a href="https://adopet-by-asoncs.web.app/login.html">Login</a>
+-   <a href="https://adopet-by-asoncs.web.app/login.html" target="_blank">Login</a>
     -   If user is signed in, redirect to Home
     -   `Entrar` button consult browser local storage looking for the user information with given email and password, if it exists, set browser session storage with that user, and redirect to Home
     -   `Esqueci minha senha.` button go to Registration with given email, if browser local storage has that email, pre-fill the registration fields.
--   <a href="https://adopet-by-asoncs.web.app/registration.html">Registration</a>
+-   <a href="https://adopet-by-asoncs.web.app/registration.html" target="_blank">Registration</a>
     -   If user is signed in, redirect to Home
     -   `Cadastrar` button save the given information in browser local storage, set browser session storage with that user, and redirect to Home.
     -   If `email` url query is present, and if browser local storage has that email, pre-fill the some fields.
--   <a href="https://adopet-by-asoncs.web.app/home.html">Home</a>
+-   <a href="https://adopet-by-asoncs.web.app/home.html" target="_blank">Home</a>
     -   If user is not signed in, redirect to Index.
     -   List all pets from a requested json file.
     -   By clicking on one pet, go to Messages with that pet selected.
--   <a href="https://adopet-by-asoncs.web.app/messages.html">Messages</a>
+-   <a href="https://adopet-by-asoncs.web.app/messages.html" target="_blank">Messages</a>
     -   If user is not signed in, redirect to Index.
     -   Pre-fill some fields with signed user information.
     -   If `petId` url query is present, select that pet.
--   <a href="https://adopet-by-asoncs.web.app/profile.html">Profile</a>
+-   <a href="https://adopet-by-asoncs.web.app/profile.html" target="_blank">Profile</a>
     -   Pre-fill the fields with signed user information.
     -   By clicking on user image in form, is possible change it.
     -   `Salvar` button save current user information
