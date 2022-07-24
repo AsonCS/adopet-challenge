@@ -70,8 +70,8 @@ This is why I accepted this challenge, I want to improve my ability with layout 
 
 -   firebase-hosting-merge.yml:
     -   Runs when there is a merge on `main` branch, that script generate a production build and deploy it.
--   firebase-hosting-merge.yml:
-    -   Runs when there is a merge request to `main` branch, that script generate a production build and deploy it to a test address.
+-   firebase-hosting-pull-request.yml:
+    -   Runs when there is a pull request to `main` branch, that script generate a production build and deploy it to a test address.
 
 ### Source Structure
 
