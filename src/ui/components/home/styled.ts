@@ -60,6 +60,7 @@ const Figure = styled.figure`
 `
 
 const Img = styled.img`
+	cursor: pointer;
 	padding: 1.5em;
 `
 
@@ -79,6 +80,7 @@ const LabelInfos = styled.label`
 
 const Span = styled.span`
 	color: var(--blue);
+	cursor: pointer;
 	display: block;
 	font-weight: 600;
 	margin-bottom: 0.5em;

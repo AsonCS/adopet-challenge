@@ -1,5 +1,5 @@
 import Router from 'next/router'
-import React from 'react'
+import React, { useEffect, useRef } from 'react'
 
 import { casa, logo03, messages as imgMessages } from '../../images'
 import { setSessionUser } from '../../../api/repository/local'
@@ -9,6 +9,14 @@ import Styled from './styled'
 
 export default function AppHeader() {
 	const user = useSessionUser()
+
+	const userAvatarRef = useRef<HTMLAnchorElement>()
+
+	useEffect(() => {
+		if (Router.asPath === profile && userAvatarRef.current) {
+			userAvatarRef.current.innerHTML += 'Sair'
+		}
+	}, [user])
 
 	const userIcon = () => {
 		if (!user) {
@@ -28,6 +36,7 @@ export default function AppHeader() {
 							}
 						}
 					}}
+					ref={userAvatarRef}
 				>
 					<Styled.UserImg src={user.avatar} alt='Icone do usuário' />
 				</a>

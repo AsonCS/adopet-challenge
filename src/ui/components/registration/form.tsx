@@ -1,10 +1,16 @@
-import React, { useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
+import Router from 'next/router'
 
-import { passwordToggle, userPlaceholder } from '../../images'
 import { EMAIL_ADDRESS_REGEX } from '../../../utils'
 import User from '../../../api/model/User'
 import AppStyled from '../../styled'
 import Styled from './styled'
+import {
+	passwordToggle,
+	passwordToggleOpen,
+	userPlaceholder,
+} from '../../images'
+import { getUser } from '../../../api/repository/local'
 
 interface Props {
 	children: any
@@ -32,6 +38,42 @@ export default function Form(props: Props) {
 			hasError = false
 			confirmPasswordRef.current.setCustomValidity('')
 			return true
+		}
+	}
+
+	useEffect(() => {
+		if (emailRef.current) {
+			let email = Router.query.email
+			if (email) {
+				email = email.toString()
+				emailRef.current.value = email
+				getUser(email, null)
+					.then((user) => {
+						nameRef.current.value = user.name
+					})
+					.catch((error) => console.log(error))
+			}
+		}
+	}, [])
+
+	const passwordToggleComponent = (
+		isHidden: boolean,
+		listener: () => void
+	) => {
+		if (isHidden) {
+			return (
+				<AppStyled.AppFormPasswordToggle
+					src={passwordToggleOpen}
+					onClick={listener}
+				/>
+			)
+		} else {
+			return (
+				<AppStyled.AppFormPasswordToggle
+					src={passwordToggle}
+					onClick={listener}
+				/>
+			)
 		}
 	}
 
@@ -97,10 +139,9 @@ export default function Form(props: Props) {
 						placeholder='Crie uma senha'
 						required
 					/>
-					<AppStyled.AppFormPasswordToggle
-						src={passwordToggle}
-						onClick={() => setPasswordVisible((old) => !old)}
-					/>
+					{passwordToggleComponent(passwordVisible, () =>
+						setPasswordVisible((old) => !old)
+					)}
 				</AppStyled.AppDivFormInputPassword>
 			</AppStyled.AppFormLabel>
 			<AppStyled.AppFormLabel>
@@ -120,10 +161,9 @@ export default function Form(props: Props) {
 						placeholder='Repita a senha criada acima'
 						required
 					/>
-					<AppStyled.AppFormPasswordToggle
-						src={passwordToggle}
-						onClick={() => setConfirmPasswordVisible((old) => !old)}
-					/>
+					{passwordToggleComponent(confirmPasswordVisible, () =>
+						setConfirmPasswordVisible((old) => !old)
+					)}
 				</AppStyled.AppDivFormInputPassword>
 			</AppStyled.AppFormLabel>
 			{props.children}

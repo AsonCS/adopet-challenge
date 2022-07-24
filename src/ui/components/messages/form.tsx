@@ -1,4 +1,5 @@
-import React, { useRef } from 'react'
+import React, { useEffect, useRef } from 'react'
+import Router from 'next/router'
 
 import { PHONE_NUMBER_REGEX } from '../../../utils'
 import Pets from '../../../api/model/Pets'
@@ -15,6 +16,14 @@ interface Props {
 export default function Form(props: Props) {
 	const petRef = useRef<HTMLSelectElement>()
 	const messageRef = useRef<HTMLTextAreaElement>()
+
+	useEffect(() => {
+		const petId = Router.query.petId
+		if (petId) {
+			petRef.current.value = petId.toString()
+			messageRef.current.focus()
+		}
+	}, [props.pets])
 
 	return (
 		<AppStyled.AppForm
