@@ -38,13 +38,13 @@
 
 ### Project
 
-    This project was designed by @Alura team 🤙, and I tried to implement it 😁.
-    This is about a unreal site of pets adoption, where users can donate or adopt pets 🐶🐱🐭🐹🐰 for the happiness of them 😸!!!
+This project was designed by @Alura team 🤙, and I tried to implement it 😁.
+This is about a unreal site of pets adoption, where users can donate or adopt pets 🐶🐱🐭🐹🐰 for the happiness of them 😸!!!
 
 ### My Challenges
 
-    I am a Android Front-End developer, but I have more facility with logic and algorithm. For the layout things, I have some difficulties 😅😅😅
-    This is why I accepted this challenge, I want to improve my ability with layout things to my professional future 💪👊🤓.
+I am a Android Front-End developer, but I have more facility with logic and algorithm. For the layout things, I have some difficulties 😅😅😅
+This is why I accepted this challenge, I want to improve my ability with layout things to my professional future 💪👊🤓.
 
 # About Source
 
