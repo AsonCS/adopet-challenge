@@ -37,7 +37,7 @@ export const setUser = async (
 
 export const getUser = async (
 	email: string,
-	password: string
+	password: string | null
 ): Promise<User | undefined> => {
 	try {
 		const item = localStorage.getItem(email)
@@ -45,7 +45,7 @@ export const getUser = async (
 			throw new UserNotSignedInException()
 		}
 		const user = JSON.parse(item) as User
-		if (user.password !== sha256(password)) {
+		if (password && user.password !== sha256(password)) {
 			throw new WrongPasswordException()
 		}
 		user.avatar = localStorage.getItem(`${user.email}_${IMG_USER}`)

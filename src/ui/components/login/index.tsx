@@ -5,9 +5,10 @@ import UserNotSignedInException from '../../../api/exception/UserNotSignedInExce
 import WrongPasswordException from '../../../api/exception/WrongPasswordException'
 import { getUser, setSessionUser } from '../../../api/repository/local'
 import useRedirectUser from '../../hooks/useRedirectUser'
+import { EMAIL_ADDRESS_REGEX } from '../../../utils'
+import { home, registration } from '../../paths'
 import { logo02 } from '../../images'
 import AppStyled from '../../styled'
-import { home } from '../../paths'
 import AppHeader from '../header'
 import AppFooter from '../footer'
 import Styled from './styled'
@@ -44,7 +45,20 @@ export default function Registration() {
 							})
 					}}
 				>
-					<Styled.ForgotLabel>
+					<Styled.ForgotLabel
+						onClick={() => {
+							const loginForm: any =
+								document.getElementById('loginForm')
+							const email: string = loginForm.email.value
+							if (!email.match(EMAIL_ADDRESS_REGEX)) {
+								alert(
+									'Insira seu email corretamente para criar uma senha nova.'
+								)
+								return
+							}
+							Router.push(`${registration}?email=${email}`)
+						}}
+					>
 						Esqueci minha senha.
 					</Styled.ForgotLabel>
 					<AppStyled.AppButton type='submit'>

@@ -24,8 +24,8 @@ export default function Home() {
 				</AppStyled.AppH2BlueMargin>
 				<PetsList
 					pets={pets}
-					onPetClick={(id, name) => {
-						Router.push(`${messages}?id=${id}&name=${name}`)
+					onPetClick={(petId) => {
+						Router.push(`${messages}?petId=${petId}`)
 					}}
 				/>
 			</AppStyled.AppMain>

@@ -5,17 +5,25 @@ import Pets from '../../../api/model/Pets'
 
 export default function PetsList(props: {
 	pets: Pets
-	onPetClick: (id: number, name: string) => void
+	onPetClick: (petId: number) => void
 }) {
 	return (
 		<Styled.ContainerList>
 			{props.pets.list.map((pet) => {
 				return (
 					<Styled.Figure key={pet.id}>
-						<Styled.Img src={pet.image} alt={pet.name} />
+						<Styled.Img
+							onClick={() => props.onPetClick(pet.id)}
+							src={pet.image}
+							alt={pet.name}
+						/>
 						<Styled.Figcaption>
 							<Styled.LabelInfos>
-								<Styled.Span>{pet.name}</Styled.Span>
+								<Styled.Span
+									onClick={() => props.onPetClick(pet.id)}
+								>
+									{pet.name}
+								</Styled.Span>
 								<Styled.SpanDescription>
 									{pet.age}
 								</Styled.SpanDescription>
@@ -30,9 +38,7 @@ export default function PetsList(props: {
 								{pet.location}
 							</Styled.SpanLocation>
 							<Styled.SpanContact
-								onClick={() =>
-									props.onPetClick(pet.id, pet.name)
-								}
+								onClick={() => props.onPetClick(pet.id)}
 							>
 								Falar com responsável
 							</Styled.SpanContact>

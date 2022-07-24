@@ -1,7 +1,7 @@
 import React, { useRef, useState } from 'react'
 
+import { passwordToggle, passwordToggleOpen } from '../../images'
 import { EMAIL_ADDRESS_REGEX } from '../../../utils'
-import { passwordToggle } from '../../images'
 import AppStyled from '../../styled'
 import Styled from './styled'
 
@@ -14,9 +14,32 @@ export default function Form(props: Props) {
 	const [passwordVisible, setPasswordVisible] = useState(false)
 	const emailRef = useRef<HTMLInputElement>()
 	const passwordRef = useRef<HTMLInputElement>()
+
+	const passwordToggleComponent = (
+		isHidden: boolean,
+		listener: () => void
+	) => {
+		if (isHidden) {
+			return (
+				<AppStyled.AppFormPasswordToggle
+					src={passwordToggleOpen}
+					onClick={listener}
+				/>
+			)
+		} else {
+			return (
+				<AppStyled.AppFormPasswordToggle
+					src={passwordToggle}
+					onClick={listener}
+				/>
+			)
+		}
+	}
+
 	return (
 		<Styled.Form
 			action='#'
+			id='loginForm'
 			onSubmit={(e) => {
 				e.preventDefault()
 				props.onSubmit(
@@ -48,10 +71,9 @@ export default function Form(props: Props) {
 						placeholder='Insira sua senha'
 						required
 					/>
-					<AppStyled.AppFormPasswordToggle
-						src={passwordToggle}
-						onClick={() => setPasswordVisible((old) => !old)}
-					/>
+					{passwordToggleComponent(passwordVisible, () => {
+						setPasswordVisible((old) => !old)
+					})}
 				</AppStyled.AppDivFormInputPassword>
 			</AppStyled.AppFormLabel>
 			{props.children}
